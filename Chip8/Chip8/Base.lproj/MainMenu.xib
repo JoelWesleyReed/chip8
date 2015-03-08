@@ -1,0 +1,1203 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5053"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="494" id="495"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <menu title="AMainMenu" systemMenu="main" autoenablesItems="NO" id="29">
+            <items>
+                <menuItem title="Chip8" id="56">
+                    <menu key="submenu" title="Chip8" systemMenu="apple" autoenablesItems="NO" id="57">
+                        <items>
+                            <menuItem title="About Chip8" id="58">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="236">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="143">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Services" id="131">
+                                <menu key="submenu" title="Services" systemMenu="services" id="130"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="144">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Hide Chip8" keyEquivalent="h" id="134">
+                                <connections>
+                                    <action selector="hide:" target="-1" id="367"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hide Others" keyEquivalent="h" id="145">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-1" id="368"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show All" id="150">
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-1" id="370"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="149">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Quit Chip8" keyEquivalent="q" id="136">
+                                <connections>
+                                    <action selector="terminate:" target="-3" id="449"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="File" id="83">
+                    <menu key="submenu" title="File" autoenablesItems="NO" id="81">
+                        <items>
+                            <menuItem title="Open…" keyEquivalent="o" id="72">
+                                <connections>
+                                    <action selector="open:" target="494" id="tj9-xm-yTh"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Program" id="KbG-px-0Tj">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Program" autoenablesItems="NO" id="22e-aV-lT7">
+                        <items>
+                            <menuItem title="Run" enabled="NO" id="gHv-bO-MQE">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="run:" target="494" id="fEL-Wh-gsw"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Step" enabled="NO" id="Ylc-EI-nnr">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="step:" target="494" id="ygZ-IU-tKm"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Stop" enabled="NO" id="dVZ-ic-VwU">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="stop:" target="494" id="fB5-44-QaH"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Reset" enabled="NO" id="QyK-Yp-HS9">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="reset:" target="494" id="04q-Q1-h8S"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="View" id="295">
+                    <menu key="submenu" title="View" autoenablesItems="NO" id="296">
+                        <items>
+                            <menuItem title="Toggle State" id="zu0-Wc-UF0">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="toggleState:" target="494" id="xXd-gN-VCD"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="8Yg-4G-YOZ"/>
+                            <menuItem title="Show Toolbar" keyEquivalent="t" id="297">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="toggleToolbarShown:" target="-1" id="366"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Customize Toolbar…" id="298">
+                                <connections>
+                                    <action selector="runToolbarCustomizationPalette:" target="-1" id="365"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Window" id="19">
+                    <menu key="submenu" title="Window" systemMenu="window" autoenablesItems="NO" id="24">
+                        <items>
+                            <menuItem title="Minimize" keyEquivalent="m" id="23">
+                                <connections>
+                                    <action selector="performMiniaturize:" target="-1" id="37"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Zoom" id="239">
+                                <connections>
+                                    <action selector="performZoom:" target="-1" id="240"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="92">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Bring All to Front" id="5">
+                                <connections>
+                                    <action selector="arrangeInFront:" target="-1" id="39"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Help" id="490">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Help" systemMenu="help" autoenablesItems="NO" id="491">
+                        <items>
+                            <menuItem title="Chip8 Help" keyEquivalent="?" id="492">
+                                <connections>
+                                    <action selector="showHelp:" target="-1" id="493"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+        </menu>
+        <customObject id="494" customClass="AppDelegate">
+            <connections>
+                <outlet property="gfxView" destination="3f1-7o-gz5" id="46o-qg-TtJ"/>
+                <outlet property="keyMatrix" destination="dS0-ob-QAz" id="hej-VH-4EL"/>
+                <outlet property="labelCycleOverflow" destination="JFj-Wd-c7D" id="Oy4-t2-ZNW"/>
+                <outlet property="menuFileOpen" destination="72" id="qxh-Ar-hXX"/>
+                <outlet property="menuProgramReset" destination="QyK-Yp-HS9" id="D9z-c0-w5z"/>
+                <outlet property="menuProgramRun" destination="gHv-bO-MQE" id="SQM-Kw-kle"/>
+                <outlet property="menuProgramStep" destination="Ylc-EI-nnr" id="bgR-r9-30h"/>
+                <outlet property="menuProgramStop" destination="dVZ-ic-VwU" id="8OV-bC-WqB"/>
+                <outlet property="menuViewToggleState" destination="zu0-Wc-UF0" id="F9F-ys-XKs"/>
+                <outlet property="runningIndicator" destination="cfh-Xi-HFS" id="f4V-jt-5JU"/>
+                <outlet property="stateDelay" destination="CIN-xF-qmU" id="Vda-lS-ori"/>
+                <outlet property="stateDrawer" destination="48r-mZ-f1c" id="L4F-KA-CEY"/>
+                <outlet property="stateKeyMatrix" destination="cGL-OX-U5d" id="kmS-Ci-2DZ"/>
+                <outlet property="statePC" destination="j1e-Q6-Kfc" id="nY7-0n-6Mx"/>
+                <outlet property="stateProgMatrix" destination="FqA-n7-g1n" id="NDf-k0-Kg6"/>
+                <outlet property="stateRegI" destination="Rf0-6Z-Vxu" id="7z3-Eq-LgH"/>
+                <outlet property="stateRegMatrix" destination="kTX-YZ-Azg" id="2rq-86-V7R"/>
+                <outlet property="stateSound" destination="XH5-So-DeH" id="4QD-z9-WvX"/>
+                <outlet property="stateStackLabelMatrix" destination="m8O-37-sbg" id="gK0-ze-sdv"/>
+                <outlet property="stateStackValueMatrix" destination="VQQ-pq-icG" id="YMF-9l-Uwt"/>
+                <outlet property="tbOpen" destination="aDP-6b-Xxn" id="hHM-ji-3w5"/>
+                <outlet property="tbReset" destination="Ndt-Pb-RP5" id="HqK-Vm-8am"/>
+                <outlet property="tbRun" destination="cfq-Q4-YTg" id="1gq-Wi-v4T"/>
+                <outlet property="tbStep" destination="Ute-bz-wPs" id="wNv-4f-Nff"/>
+                <outlet property="tbStop" destination="1Hg-P5-9JU" id="slC-nn-NA3"/>
+                <outlet property="tbToggleState" destination="RNu-iT-oeA" id="zjt-Hj-qL1"/>
+                <outlet property="window" destination="niw-g8-C3r" id="mFR-yh-2XP"/>
+            </connections>
+        </customObject>
+        <customObject id="420" customClass="NSFontManager"/>
+        <window title="Chip8" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="niw-g8-C3r">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="163" y="199" width="600" height="450"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <value key="minSize" type="size" width="600" height="450"/>
+            <value key="maxSize" type="size" width="600" height="450"/>
+            <view key="contentView" id="Yt1-Nj-qq6">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="450"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QA2-E7-7LB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="450"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3f1-7o-gz5" userLabel="GFXView" customClass="GFXView">
+                                <rect key="frame" x="20" y="174" width="512" height="256"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </customView>
+                            <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bjm-Nj-D5K">
+                                <rect key="frame" x="560" y="32" width="21" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <sliderCell key="cell" alignment="left" minValue="100" maxValue="12000" doubleValue="1000" tickMarkPosition="left" sliderType="linear" id="cq9-Z5-0jP">
+                                    <connections>
+                                        <action selector="speedChanged:" target="494" id="EJA-sa-Qzc"/>
+                                    </connections>
+                                </sliderCell>
+                            </slider>
+                            <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="cfh-Xi-HFS">
+                                <rect key="frame" x="7" y="6" width="16" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </progressIndicator>
+                            <matrix verticalHuggingPriority="750" fixedFrame="YES" mode="highlight" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dS0-ob-QAz">
+                                <rect key="frame" x="49" y="35" width="454" height="106"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                <size key="cellSize" width="48" height="48"/>
+                                <size key="intercellSpacing" width="10" height="10"/>
+                                <buttonCell key="prototype" type="square" title="0" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3Ye-2F-bbl">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <cells>
+                                    <column>
+                                        <buttonCell type="square" title="0" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eue-fA-p61">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wxz-X1-NwB">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </column>
+                                    <column>
+                                        <buttonCell type="square" title="1" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Tpm-Fk-Cj6">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="9" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qXk-vJ-mfZ">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </column>
+                                    <column>
+                                        <buttonCell type="square" title="2" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RkL-CL-E7D">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="A" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4ai-dA-Mef">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </column>
+                                    <column>
+                                        <buttonCell type="square" title="3" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pSe-13-pR4">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="B" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hsA-Dc-9Xi">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </column>
+                                    <column>
+                                        <buttonCell type="square" title="4" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RzL-WS-ybp">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="C" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YXD-JD-1XX">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </column>
+                                    <column>
+                                        <buttonCell type="square" title="5" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IfT-GS-ds3">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="D" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2sp-bM-Skx">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </column>
+                                    <column>
+                                        <buttonCell type="square" title="6" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LZ8-aT-i5g">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="E" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cJY-d4-78t">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </column>
+                                    <column>
+                                        <buttonCell type="square" title="7" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Bzf-zb-8pl">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="F" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GrR-dY-KSo">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </column>
+                                </cells>
+                                <connections>
+                                    <action selector="keyPressed:" target="494" id="zF4-Za-TQs"/>
+                                </connections>
+                            </matrix>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JFj-Wd-c7D">
+                                <rect key="frame" x="3" y="30" width="25" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="+" id="aCJ-a1-Fjg">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                </subviews>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="975BC7A2-6694-49CB-9F95-210118EF53C1" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="ecU-KN-HLC">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="90A5852C-B6C0-4398-8AC7-0AFFF5B2FBA6" label="Open" paletteLabel="Open" tag="-1" image="NSFolder" autovalidates="NO" id="aDP-6b-Xxn">
+                        <connections>
+                            <action selector="open:" target="494" id="Hew-LE-Uee"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="989CBCB6-5AA3-4DCE-8D86-69EC5F285806" label="Run" paletteLabel="Run" tag="-1" image="Run" autovalidates="NO" id="cfq-Q4-YTg">
+                        <connections>
+                            <action selector="run:" target="494" id="1K2-NA-e5U"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="6D55EA03-3EE6-4521-ACB6-ADB7FAC02339" label="Step" paletteLabel="Step" tag="-1" image="Step" autovalidates="NO" id="Ute-bz-wPs">
+                        <connections>
+                            <action selector="step:" target="494" id="MK5-RV-edc"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="DC8F5610-8A74-44AC-B6F2-B188967ED24F" label="Stop" paletteLabel="Stop" tag="-1" image="Stop" autovalidates="NO" id="1Hg-P5-9JU">
+                        <connections>
+                            <action selector="stop:" target="494" id="NZy-n2-bD3"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="DCB0BC64-76B5-42A0-B300-A08ED5E69908" label="Reset" paletteLabel="Reset" tag="-1" image="Reset" autovalidates="NO" id="Ndt-Pb-RP5">
+                        <connections>
+                            <action selector="reset:" target="494" id="JJA-cv-6Af"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="34EC06DA-7A50-4F39-A887-A849F302357C" label="Toggle State" paletteLabel="Toggle State" tag="-1" image="NSAdvanced" autovalidates="NO" id="RNu-iT-oeA">
+                        <connections>
+                            <action selector="toggleState:" target="494" id="bq7-oo-jlw"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="UE6-f1-4oN"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="UQ4-qb-Vba"/>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="aDP-6b-Xxn"/>
+                    <toolbarItem reference="UE6-f1-4oN"/>
+                    <toolbarItem reference="cfq-Q4-YTg"/>
+                    <toolbarItem reference="Ute-bz-wPs"/>
+                    <toolbarItem reference="1Hg-P5-9JU"/>
+                    <toolbarItem reference="Ndt-Pb-RP5"/>
+                    <toolbarItem reference="UQ4-qb-Vba"/>
+                    <toolbarItem reference="RNu-iT-oeA"/>
+                </defaultToolbarItems>
+            </toolbar>
+        </window>
+        <customView id="67B-sj-yew" userLabel="Drawer Content View">
+            <rect key="frame" x="0.0" y="0.0" width="445" height="423"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ltp-pS-FI4">
+                    <rect key="frame" x="0.0" y="-3" width="445" height="428"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <subviews>
+                        <box autoresizesSubviews="NO" fixedFrame="YES" title="Program" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="Vza-vp-Kgo">
+                            <rect key="frame" x="17" y="334" width="300" height="74"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <view key="contentView">
+                                <rect key="frame" x="1" y="1" width="298" height="58"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j1e-Q6-Kfc">
+                                        <rect key="frame" x="124" y="33" width="50" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="center" title="0000" placeholderString="" usesSingleLineMode="YES" id="EJ9-cx-ANq">
+                                            <font key="font" size="14" name="PTMono-Bold"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <matrix verticalHuggingPriority="750" fixedFrame="YES" mode="highlight" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FqA-n7-g1n">
+                                        <rect key="frame" x="16" y="0.0" width="266" height="25"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        <size key="cellSize" width="50" height="25"/>
+                                        <size key="intercellSpacing" width="4" height="0.0"/>
+                                        <textFieldCell key="prototype" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="center" title="0000" placeholderString="" usesSingleLineMode="YES" id="flT-fy-8Zv">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <cells>
+                                            <column>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="center" title="0000" placeholderString="" usesSingleLineMode="YES" id="1jN-3x-wrB">
+                                                    <font key="font" size="14" name="PTMono-Regular"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </column>
+                                            <column>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="center" title="0000" placeholderString="" usesSingleLineMode="YES" id="6wW-4l-iCl">
+                                                    <font key="font" size="14" name="PTMono-Regular"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </column>
+                                            <column>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="center" title="0000" placeholderString="" usesSingleLineMode="YES" id="Mtz-np-hHn">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </column>
+                                            <column>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="center" title="0000" placeholderString="" usesSingleLineMode="YES" id="DiF-BY-aPt">
+                                                    <font key="font" size="14" name="PTMono-Regular"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </column>
+                                            <column>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="center" title="0000" placeholderString="" usesSingleLineMode="YES" id="I7n-2I-bqL">
+                                                    <font key="font" size="14" name="PTMono-Regular"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </column>
+                                        </cells>
+                                    </matrix>
+                                </subviews>
+                            </view>
+                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </box>
+                        <box autoresizesSubviews="NO" fixedFrame="YES" title="Registers" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="AP8-7e-H9j">
+                            <rect key="frame" x="17" y="162" width="300" height="168"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <view key="contentView">
+                                <rect key="frame" x="1" y="1" width="298" height="152"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oi3-Qz-riB">
+                                        <rect key="frame" x="16" y="127" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="V0:" placeholderString="" usesSingleLineMode="YES" id="RVl-9v-456">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="doz-79-0q9">
+                                        <rect key="frame" x="88" y="127" width="32" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="V4:" placeholderString="" usesSingleLineMode="YES" id="zjt-OT-b3K">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="li0-jR-zA9">
+                                        <rect key="frame" x="136" y="127" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="V8:" placeholderString="" usesSingleLineMode="YES" id="a7s-o0-W4v">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HKs-Wm-9a8">
+                                        <rect key="frame" x="196" y="127" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="VC:" placeholderString="" usesSingleLineMode="YES" id="Y1d-Ao-sXI">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s1d-rQ-hKE">
+                                        <rect key="frame" x="16" y="94" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="V1:" placeholderString="" usesSingleLineMode="YES" id="p5U-Lo-LOZ">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2eC-4O-JoW">
+                                        <rect key="frame" x="76" y="94" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="V5:" placeholderString="" usesSingleLineMode="YES" id="SSy-Xu-Wdd">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eRM-UM-35G">
+                                        <rect key="frame" x="136" y="94" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="V9:" placeholderString="" usesSingleLineMode="YES" id="P7J-Tj-XIW">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wOQ-9F-lio">
+                                        <rect key="frame" x="196" y="94" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="VD:" placeholderString="" usesSingleLineMode="YES" id="8DB-kG-5Wh">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IUZ-7b-hez">
+                                        <rect key="frame" x="16" y="61" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="V2:" placeholderString="" usesSingleLineMode="YES" id="180-kz-MU7">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z7s-zi-A0F">
+                                        <rect key="frame" x="76" y="61" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="V6:" placeholderString="" usesSingleLineMode="YES" id="MH0-VA-4d7">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lud-zo-ckK">
+                                        <rect key="frame" x="136" y="61" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="VA:" placeholderString="" usesSingleLineMode="YES" id="2TW-kB-5li">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iWA-lR-p64">
+                                        <rect key="frame" x="196" y="61" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="VE:" placeholderString="" usesSingleLineMode="YES" id="SfX-IT-FZ1">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FJP-bt-PGf">
+                                        <rect key="frame" x="16" y="31" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="V3:" placeholderString="" usesSingleLineMode="YES" id="K02-eo-y0A">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kad-l5-oSG">
+                                        <rect key="frame" x="76" y="31" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="V7:" placeholderString="" usesSingleLineMode="YES" id="Tpd-Ak-Zil">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XdV-L0-hhq">
+                                        <rect key="frame" x="136" y="31" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="VB:" placeholderString="" usesSingleLineMode="YES" id="hLN-B9-aov">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6xT-cc-c2p">
+                                        <rect key="frame" x="196" y="31" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="VF:" placeholderString="" usesSingleLineMode="YES" id="O6n-7k-plF">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rf0-6Z-Vxu">
+                                        <rect key="frame" x="64" y="-2" width="48" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="0000" placeholderString="" usesSingleLineMode="YES" id="5Mc-p1-gqs">
+                                            <font key="font" size="14" name="PTMono-Bold"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eej-4F-zKO">
+                                        <rect key="frame" x="28" y="-2" width="32" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="I:" placeholderString="" usesSingleLineMode="YES" id="8xm-g6-3RE">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <matrix verticalHuggingPriority="750" fixedFrame="YES" mode="highlight" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTX-YZ-Azg">
+                                        <rect key="frame" x="64" y="31" width="207" height="121"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        <size key="cellSize" width="27" height="25"/>
+                                        <size key="intercellSpacing" width="33" height="7"/>
+                                        <textFieldCell key="prototype" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="2jT-dc-yYf">
+                                            <font key="font" size="14" name="PTMono-Bold"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <cells>
+                                            <column>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="NyX-53-cff">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="ljt-Vi-CWz">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="WGu-YR-Q2a">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="600-mk-4m6">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </column>
+                                            <column>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="mhd-gs-b20">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="Ofl-4s-PMp">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="tT6-je-pzj">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="QPg-XC-qfV">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </column>
+                                            <column>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="npO-fP-ciF">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="5MP-uO-ooI">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="sdV-B6-vq8">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="Os5-Td-dvL">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </column>
+                                            <column>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="c2w-id-RZA">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="BnO-MX-xPV">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="915-Bo-rKd">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="eYE-A7-U7U">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </column>
+                                        </cells>
+                                    </matrix>
+                                </subviews>
+                            </view>
+                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </box>
+                        <box autoresizesSubviews="NO" fixedFrame="YES" title="Key State" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="eyF-KU-taC">
+                            <rect key="frame" x="17" y="17" width="300" height="141"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <view key="contentView">
+                                <rect key="frame" x="1" y="1" width="298" height="125"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4yw-3b-3pY">
+                                        <rect key="frame" x="16" y="100" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="0:" placeholderString="" usesSingleLineMode="YES" id="dDO-wn-eRH">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K3g-07-4u1">
+                                        <rect key="frame" x="76" y="100" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="4:" placeholderString="" usesSingleLineMode="YES" id="BRS-Hv-a8D">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UvA-IW-Wif">
+                                        <rect key="frame" x="136" y="100" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="8:" placeholderString="" usesSingleLineMode="YES" id="EYC-rh-VSt">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o34-q0-Sbn">
+                                        <rect key="frame" x="196" y="100" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="C:" placeholderString="" usesSingleLineMode="YES" id="8C1-u9-CvX">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vcw-z5-j1I">
+                                        <rect key="frame" x="16" y="67" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="1:" placeholderString="" usesSingleLineMode="YES" id="35b-LW-L4Y">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aS1-1K-fwe">
+                                        <rect key="frame" x="76" y="67" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="5:" placeholderString="" usesSingleLineMode="YES" id="kkr-pZ-RMX">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iWI-sN-qNt">
+                                        <rect key="frame" x="136" y="67" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="9:" placeholderString="" usesSingleLineMode="YES" id="EL4-Mu-YGo">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uz9-y7-1wn">
+                                        <rect key="frame" x="196" y="67" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="D:" placeholderString="" usesSingleLineMode="YES" id="VTU-a6-iWK">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2og-mA-RXt">
+                                        <rect key="frame" x="16" y="34" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="2:" placeholderString="" usesSingleLineMode="YES" id="de3-ap-RFe">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h2P-wo-oVs">
+                                        <rect key="frame" x="76" y="34" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="6:" placeholderString="" usesSingleLineMode="YES" id="F7c-Sm-ORw">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="teP-MZ-fFL">
+                                        <rect key="frame" x="136" y="34" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="A:" placeholderString="" usesSingleLineMode="YES" id="o6V-Ct-LXo">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bci-NR-P82">
+                                        <rect key="frame" x="196" y="34" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="E:" placeholderString="" usesSingleLineMode="YES" id="36C-MX-bqd">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Lt-xb-JTc">
+                                        <rect key="frame" x="16" y="1" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="3:" placeholderString="" usesSingleLineMode="YES" id="EHf-Fq-mjX">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Scy-Tv-DRC">
+                                        <rect key="frame" x="76" y="1" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="7:" placeholderString="" usesSingleLineMode="YES" id="RaG-Ra-ajc">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KOz-S5-iZN">
+                                        <rect key="frame" x="136" y="1" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="B:" placeholderString="" usesSingleLineMode="YES" id="jXX-pz-O7X">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HRY-ma-oXK">
+                                        <rect key="frame" x="196" y="1" width="44" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="F:" placeholderString="" usesSingleLineMode="YES" id="swY-Zv-JoV">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <matrix verticalHuggingPriority="750" fixedFrame="YES" mode="highlight" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGL-OX-U5d">
+                                        <rect key="frame" x="64" y="1" width="207" height="124"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        <size key="cellSize" width="27" height="25"/>
+                                        <size key="intercellSpacing" width="33" height="8"/>
+                                        <textFieldCell key="prototype" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="1jd-8H-w49">
+                                            <font key="font" size="14" name="PTMono-Bold"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <cells>
+                                            <column>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="IbA-3K-s2E">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="9d0-9r-yO2">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="Hqu-Q4-fcA">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="l5Z-nb-Wfc">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </column>
+                                            <column>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="3Xi-ZJ-6IB">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="6nG-fm-U2P">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="xFr-At-wCa">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="ngg-TH-OKU">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </column>
+                                            <column>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="qE3-7f-dZ9">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="bea-1F-yHp">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="CRL-W6-yQb">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="1Le-00-OHM">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </column>
+                                            <column>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="Kix-Js-j7t">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="EFZ-5f-RUh">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="s25-Nc-lIx">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="rMN-nm-3Is">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </column>
+                                        </cells>
+                                    </matrix>
+                                </subviews>
+                            </view>
+                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </box>
+                        <box autoresizesSubviews="NO" fixedFrame="YES" title="Stack" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="6Wq-cB-Mq2">
+                            <rect key="frame" x="319" y="17" width="109" height="313"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <view key="contentView">
+                                <rect key="frame" x="1" y="1" width="107" height="297"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <matrix verticalHuggingPriority="750" fixedFrame="YES" mode="highlight" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQQ-pq-icG">
+                                        <rect key="frame" x="51" y="15" width="42" height="281"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        <size key="cellSize" width="42" height="25"/>
+                                        <size key="intercellSpacing" width="0.0" height="7"/>
+                                        <textFieldCell key="prototype" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="0000" placeholderString="" usesSingleLineMode="YES" id="MQ2-Ff-7Lg">
+                                            <font key="font" size="14" name="PTMono-Bold"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <cells>
+                                            <column>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="0000" placeholderString="" usesSingleLineMode="YES" id="QwS-wP-U50">
+                                                    <font key="font" size="14" name="PTMono-Bold"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="0000" placeholderString="" usesSingleLineMode="YES" id="gs2-cV-h9B">
+                                                    <font key="font" size="14" name="PTMono-Regular"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="0000" placeholderString="" usesSingleLineMode="YES" id="FL9-7b-dBT">
+                                                    <font key="font" size="14" name="PTMono-Regular"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="0000" placeholderString="" usesSingleLineMode="YES" id="gyI-Nx-Ff4">
+                                                    <font key="font" size="14" name="PTMono-Regular"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="0000" placeholderString="" usesSingleLineMode="YES" id="gmK-Oh-KL6">
+                                                    <font key="font" size="14" name="PTMono-Regular"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="0000" placeholderString="" usesSingleLineMode="YES" id="dU8-qp-Grg">
+                                                    <font key="font" size="14" name="PTMono-Regular"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="0000" placeholderString="" usesSingleLineMode="YES" id="KGT-71-a6a">
+                                                    <font key="font" size="14" name="PTMono-Regular"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="0000" placeholderString="" usesSingleLineMode="YES" id="n15-s5-bJ8">
+                                                    <font key="font" size="14" name="PTMono-Regular"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="0000" placeholderString="" usesSingleLineMode="YES" id="ygw-1b-hEI">
+                                                    <font key="font" size="14" name="PTMono-Regular"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </column>
+                                        </cells>
+                                    </matrix>
+                                    <matrix verticalHuggingPriority="750" fixedFrame="YES" mode="highlight" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8O-37-sbg">
+                                        <rect key="frame" x="17" y="15" width="26" height="281"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        <size key="cellSize" width="26" height="25"/>
+                                        <size key="intercellSpacing" width="0.0" height="7"/>
+                                        <textFieldCell key="prototype" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="-:" placeholderString="" usesSingleLineMode="YES" id="eaH-fv-9x0">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <cells>
+                                            <column>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="-:" placeholderString="" usesSingleLineMode="YES" id="W4V-oc-8QX">
+                                                    <font key="font" size="14" name="PTMono-Regular"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="-:" placeholderString="" usesSingleLineMode="YES" id="17v-Zy-8WR">
+                                                    <font key="font" size="14" name="PTMono-Regular"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="-:" placeholderString="" usesSingleLineMode="YES" id="kZi-rq-VUd">
+                                                    <font key="font" size="14" name="PTMono-Regular"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="-:" placeholderString="" usesSingleLineMode="YES" id="j76-NE-LQn">
+                                                    <font key="font" size="14" name="PTMono-Regular"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="-:" placeholderString="" usesSingleLineMode="YES" id="IMM-h3-cjk">
+                                                    <font key="font" size="14" name="PTMono-Regular"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="-:" placeholderString="" usesSingleLineMode="YES" id="Dqg-N3-rrl">
+                                                    <font key="font" size="14" name="PTMono-Regular"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="-:" placeholderString="" usesSingleLineMode="YES" id="wVy-BN-ecx">
+                                                    <font key="font" size="14" name="PTMono-Regular"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="-:" placeholderString="" usesSingleLineMode="YES" id="9GV-a5-p1E">
+                                                    <font key="font" size="14" name="PTMono-Regular"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <textFieldCell lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="-:" placeholderString="" usesSingleLineMode="YES" id="QjZ-1M-r6K">
+                                                    <font key="font" size="14" name="PTMono-Regular"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </column>
+                                        </cells>
+                                    </matrix>
+                                </subviews>
+                            </view>
+                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </box>
+                        <box autoresizesSubviews="NO" fixedFrame="YES" title="Timers" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="siT-VO-AZu">
+                            <rect key="frame" x="319" y="334" width="109" height="74"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <view key="contentView">
+                                <rect key="frame" x="1" y="1" width="107" height="58"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CIN-xF-qmU">
+                                        <rect key="frame" x="77" y="33" width="26" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="6eK-XP-mbu">
+                                            <font key="font" size="14" name="PTMono-Bold"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XH5-So-DeH">
+                                        <rect key="frame" x="77" y="5" width="26" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" title="00" placeholderString="" usesSingleLineMode="YES" id="14Y-as-WSM">
+                                            <font key="font" size="14" name="PTMono-Bold"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PEX-rj-zl2">
+                                        <rect key="frame" x="4" y="33" width="69" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="Delay:" placeholderString="" usesSingleLineMode="YES" id="RiQ-gP-yQh">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gTO-c6-TuE">
+                                        <rect key="frame" x="4" y="5" width="69" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="Sound:" placeholderString="" usesSingleLineMode="YES" id="WoS-em-wUk">
+                                            <font key="font" size="14" name="PTMono-Regular"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                            </view>
+                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </box>
+                    </subviews>
+                </view>
+            </subviews>
+        </customView>
+        <drawer trailingOffset="15" id="48r-mZ-f1c">
+            <size key="contentSize" width="445" height="423"/>
+            <size key="maxContentSize" width="10000" height="10000"/>
+            <connections>
+                <outlet property="contentView" destination="67B-sj-yew" id="e6J-MI-r5Z"/>
+                <outlet property="parentWindow" destination="niw-g8-C3r" id="u6c-dA-Mws"/>
+            </connections>
+        </drawer>
+    </objects>
+    <resources>
+        <image name="NSAdvanced" width="32" height="32"/>
+        <image name="NSFolder" width="32" height="32"/>
+        <image name="Reset" width="128" height="128"/>
+        <image name="Run" width="128" height="128"/>
+        <image name="Step" width="128" height="128"/>
+        <image name="Stop" width="128" height="128"/>
+    </resources>
+</document>
