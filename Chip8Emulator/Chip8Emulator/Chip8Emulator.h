@@ -17,7 +17,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "Chip8State.h"
+#import <Chip8Emulator/Chip8State.h>
 
 
 typedef enum Chip8ErrorId : NSUInteger {

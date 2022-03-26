@@ -82,7 +82,7 @@
             NSURL *selection = openPanel.URLs[0];
             NSString* path = [selection.path stringByResolvingSymlinksInPath];
             NSData *theProgram = [NSData dataWithContentsOfFile:path];
-            [em load:theProgram];
+            [self->em load:theProgram];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSString *fileName = [[path lastPathComponent] stringByDeletingPathExtension];
@@ -103,7 +103,7 @@
         else {
             if (wasRunning) {
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-                    [em run];
+                    [self->em run];
                 });
             }
         }
@@ -123,7 +123,7 @@
 
 - (IBAction)run:(id)sender {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        [em run];
+        [self->em run];
     });
 }
 
